@@ -1,6 +1,6 @@
 
 # OpenGL 3D Model Viewer with C#
-<img src="/path/to/img.jpg" alt="image">
+<img src="Capture.PNG" alt="image">
 This is a simple 3D model viewer built with OpenGL and C#. It allows you to load 3D models in OBJ format and view them in a 3D environment. You can rotate, zoom in/out, and pan around the model to inspect it from different angles.
 
 ## Requirements
