@@ -17,7 +17,8 @@ To install this program, you can simply clone this repository or download the so
 ## Usage
 #### Your "{model}.obj" and "{model}_diffuse.png" file must be stated in same directory. 
 
-To use this program, simply double-click on the "OBJ_Import.exe" file. This should open up the 3D model viewer window. To load a 3D model, click on the File menu and select Open. Navigate to the folder where your OBJ file is located and select it. The program should load the model and display it in the 3D environment. <br/> You can also use the arrow keys on your keyboard to rotate the model.
+To use this program, simply double-click on the "OBJ_Import.exe" file. This should open up the 3D model viewer window. To load a 3D model, click on the File menu and select Open. Navigate to the folder where your OBJ file is located and select it. The program should load the model and display it in the 3D environment.
+<br/><br/> You can also use the arrow keys on your keyboard to rotate the model.
 
 ## Credits
 This program was created by Harun Metin as a personal project. It uses the following libraries:
