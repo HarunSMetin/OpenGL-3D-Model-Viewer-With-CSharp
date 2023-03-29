@@ -9,6 +9,7 @@ using StbImageSharp;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
+using System.Globalization;
 
 namespace OBJ_Import
 {
@@ -16,7 +17,9 @@ namespace OBJ_Import
     {
         public Form1()
         {
-            InitializeComponent();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            this.InitializeComponent(); 
         }
         private void btnLoadModel_Click(object sender, EventArgs e)
         {
@@ -25,6 +28,8 @@ namespace OBJ_Import
             file.Title = "Select your OBJ File..";
             if (file.ShowDialog() == DialogResult.OK)
             {
+                GL.Clear(ClearBufferMask.ColorBufferBit);
+                GL.Clear(ClearBufferMask.DepthBufferBit); 
                 ModelLoadToBuffer(file.FileName.Substring(0, file.FileName.IndexOf(".obj")));
                 glControl1.Invalidate();
             }
@@ -381,7 +386,7 @@ namespace OBJ_Import
             }
             catch
             {
-                ImageResult image = ImageResult.FromStream(File.OpenRead("C:\\Users\\serkan.metin\\Desktop\\OBJ_Import\\OBJ_Import\\OBJ_Import\\default_diffuse.png"), ColorComponents.RedGreenBlueAlpha);
+                ImageResult image = ImageResult.FromStream(File.OpenRead(filePath.Substring(0, filePath.LastIndexOf("/")) + "../Model/default_diffuse.png"), ColorComponents.RedGreenBlueAlpha);
                 GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, image.Width, image.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, image.Data);
 
                 modelMat.ambient = new Vector3(0.5f, 0.5f, 0.5f);
